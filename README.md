@@ -36,29 +36,44 @@ Para resolver esse problema, propõe-se a integração do sistema com uma API me
 
 
 ## 🔧 Funcionamento
-<p
-• Importa a biblioteca requests para realizar chamadas HTTP à API de clima.
- </p>
-• Define a função obter_clima(cidade, api_key) para organizar o acesso à API OpenWeatherMap.
-• Monta a URL da API com os parâmetros: cidade, chave da API, unidade em Celsius e idioma em português.
-• Realiza a requisição com requests.get() e verifica se foi bem-sucedida com raise_for_status().
-• Retorna os dados da API em formato JSON (dicionário Python).
-• Se ocorrer um erro na requisição, imprime uma mensagem de erro e retorna None.
 
-• Define as variáveis API_KEY e CIDADE para configurar o acesso à API.
-• Chama a função obter_clima para obter os dados da cidade especificada.
-• Extrai a condição do tempo atual da resposta JSON usando o campo 'weather'[0]['main'].
+Este script utiliza a API da OpenWeatherMap para decidir, com base na condição climática e na umidade do solo, se a bomba de irrigação deve ser ligada ou não.
 
-• 25 é valor padrão do sensor de umidade com a variável (sensor_umidade)  (valor de log ficticio do esp32 para exemplo)
- 
- 
-• Define a lógica para controle da bomba de irrigação:
+### 🔧 Funcionalidades e Fluxo do Código
 
-A bomba será ligada se a umidade for menor que 50%.
+- Importa a biblioteca `requests` para realizar chamadas HTTP à API de clima.
+- Define a função `obter_clima(cidade, api_key)` para organizar o acesso à API OpenWeatherMap.
+- Monta a URL da API com os seguintes parâmetros:
+  - Cidade
+  - Chave da API (`api_key`)
+  - Unidades de medida em Celsius
+  - Idioma em português
+- Realiza a requisição usando `requests.get()` e verifica se a resposta foi bem-sucedida com `raise_for_status()`.
+- Retorna os dados da API em formato JSON (como um dicionário Python).
+- Em caso de erro na requisição, imprime uma mensagem e retorna `None`.
 
-E a condição do tempo não for chuva, chuvisco ou tempestade.
+### Configuração da API
 
-• Exibe no console se a bomba será ligada ou desligada com base nessas condições.
+- Define as variáveis `API_KEY` e `CIDADE` para configurar o acesso à API.
+- Chama a função `obter_clima` para obter os dados climáticos da cidade especificada.
+
+### Processamento dos Dados
+
+- Extrai a condição do tempo atual do campo `'weather'[0]['main']` da resposta JSON.
+
+### Leitura do Sensor
+
+- Define a variável `sensor_umidade` com valor padrão **25** (valor fictício de um log do ESP32 para exemplo).
+
+###  Lógica de Controle da Bomba
+
+A bomba será **ligada** se:
+- A umidade for **menor que 50%**, **e**
+- A condição do tempo **não for** "Rain" (chuva), "Drizzle" (chuvisco) ou "Thunderstorm" (tempestade).
+
+### 📋 Saída no Console
+
+- Exibe se a bomba será **ligada** ou **desligada**, com base nas condições acima.
 
 ## 📋 Licença
 
