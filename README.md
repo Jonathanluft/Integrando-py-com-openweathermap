@@ -36,7 +36,9 @@ Para resolver esse problema, propõe-se a integração do sistema com uma API me
 
 
 ## 🔧 Funcionamento
+<p
 • Importa a biblioteca requests para realizar chamadas HTTP à API de clima.
+ </p>
 • Define a função obter_clima(cidade, api_key) para organizar o acesso à API OpenWeatherMap.
 • Monta a URL da API com os parâmetros: cidade, chave da API, unidade em Celsius e idioma em português.
 • Realiza a requisição com requests.get() e verifica se foi bem-sucedida com raise_for_status().
