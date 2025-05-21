@@ -25,7 +25,10 @@ Cap 3 - Colheita de Dados e Insights - Cap 1 - Construindo uma máquina agrícol
 - <a href="https://www.linkedin.com/company/inova-fusca">Leonardo Ruiz Orabona</a>
 ### Coordenador(a)
 - <a href="https://www.linkedin.com/company/inova-fusca">ANDRÉ GODOI CHIOVATO</a>
+## 📁 Conteúdo do Projeto
 
+- `integração py com api.ipynb`: Código fonte funcional em py no notbook.
+- `README.md`: Este documento explicativo.
 
 ## 📜 Justificativa do problema e descrição da solução proposta
 
