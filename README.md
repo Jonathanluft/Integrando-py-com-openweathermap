@@ -47,8 +47,8 @@ Para resolver esse problema, propõe-se a integração do sistema com uma API me
 • Chama a função obter_clima para obter os dados da cidade especificada.
 • Extrai a condição do tempo atual da resposta JSON usando o campo 'weather'[0]['main'].
 
-• 0 é valor padrão do sensor de umidade com a variável (sensor_umidade = 0) 
- para uma integração com o codigo principal (FarmTech Solutions) copie o valor de umidade
+• 25 é valor padrão do sensor de umidade com a variável (sensor_umidade)  (valor de log ficticio do esp32 para exemplo)
+ 
  
 • Define a lógica para controle da bomba de irrigação:
 
